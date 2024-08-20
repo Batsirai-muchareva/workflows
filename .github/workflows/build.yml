@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+   build-plugin:
+     name: Build plugin
+     runs-on: ubuntu-22.04
+     steps:
+       - name: Checkout source code
+         uses: actions/checkout@v4
+
+       - name: Output we are in the current directory
+         run: |
+           ls -al
+           
+       - name: Create a new folder outside root and a file inside that folder
+         run: |
+           mkdir ../elementor
+           touch ../elementor/elementor.php
+
+       - name: Go to the created folder
+         run: |
+           cd ../elementor
+
+           # Now we are in the elementor folder in this step lets 
+           # check if we are still in that folder in the next step
+
+       - name: Check are we still in the same folder
+         run: |
+           ls -al
