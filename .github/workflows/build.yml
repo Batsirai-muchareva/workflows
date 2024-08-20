@@ -20,7 +20,7 @@ jobs:
            mkdir ../elementor
            touch ../elementor/elementor.php
 
-       - name: Go to the created folder & check we ar in that directory
+       - name: Go to the created folder & check if we are in that navigated directory
          run: |
            cd ../elementor
            ls -al
@@ -28,6 +28,6 @@ jobs:
            # Now we are in the elementor folder in this step lets 
            # check if we are still in that folder in the next step
 
-       - name: Check are we still in the same folder
+       - name: Check are we still in the same folder that we navigate
          run: |
            ls -al
